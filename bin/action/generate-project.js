@@ -10,7 +10,7 @@ async function generateProject() {
       message: "Please select project:",
       choices: templates.map((template) => ({
         name: template.name,
-        value: template.git_source,
+        value: template.gitSource,
       })),
     },
   ]);

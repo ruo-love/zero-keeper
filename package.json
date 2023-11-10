@@ -1,13 +1,13 @@
 {
-  "name": "zero-cli",
-  "version": "1.0.0",
-  "description": "快速可视化选择配置文件中的项目",
+  "name": "zero-keeper",
+  "version": "1.0.1",
+  "description": "本地项目管家",
   "bin": {
-    "zero-cli": "./bin/index.js"
+    "keeper": "./bin/index.js"
   },
   "scripts": {},
   "keywords": [],
-  "author": "",
+  "author": "zrcode || zero",
   "license": "ISC",
   "devDependencies": {},
   "dependencies": {

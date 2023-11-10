@@ -2,15 +2,15 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const showList = require("../common/show-list");
 const path = require("path");
-module.exports = async function addProject(options, name, git_source) {
+module.exports = async function addProject(options, name, gitSource) {
   const templates = require("../config/template.json");
-  if (name && git_source) {
+  if (name && gitSource) {
     const options = {
       name,
-      git_source,
+      gitSource,
       id: Date.now(),
       tips: "",
-      create_time: new Date().toLocaleString(),
+      createTime: new Date().toLocaleString(),
     };
     templates.push(options);
     fs.writeFileSync(
@@ -29,7 +29,7 @@ module.exports = async function addProject(options, name, git_source) {
     },
     {
       type: "input",
-      name: "git_source",
+      name: "gitSource",
       message: "please input git clone url",
     },
     {
@@ -48,10 +48,14 @@ module.exports = async function addProject(options, name, git_source) {
         message: "please input project prompt",
       },
     ]);
-    answers.tips = tips;
+    answers.tips = tips || "";
+  } else {
+    answers.tips = "";
   }
+  delete answers.need_tips;
+
   answers.id = Date.now();
-  answers.create_time = new Date().toLocaleString();
+  answers.createTime = new Date().toLocaleString();
   templates.push(answers);
   fs.writeFileSync(
     path.resolve(__dirname, "../config/template.json"),

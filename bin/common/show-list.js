@@ -1,11 +1,28 @@
 const Table = require("cli-table");
-module.exports = function showList() {
+module.exports = function showList(
+  args,
+  options,
+  clos = ["id", "name", "gitSource", "createTime", "tips"]
+) {
+  console.log(args);
+
+  let _cols = [];
+  if (args) _cols = clos.filter((item) => args[item]);
+  console.log(_cols);
+  if (_cols.length == 0) {
+    _cols = clos;
+  } else {
+    _cols.unshift("id");
+  }
   const templates = require("../config/template.json");
   const table = new Table({
-    head: ["id", "name", "git_source", "create_time","tips"],
+    head: _cols,
+    style: {
+      border: ["green"],
+    },
   });
   templates.forEach((item) => {
-    table.push([item.id, item.name, item.git_source, item.create_time,item.tips]);
+    table.push(_cols.map((col) => item[col]));
   });
   console.log(table.toString());
 };

@@ -4,7 +4,7 @@ const { program } = require("commander");
  * 选择项目
  */
 program.version("1.0.0").name(`
-    欢迎使用 zero-cli\n
+    欢迎使用 keeper\n
     本地快速可视化记录git项目\n
 `);
 
@@ -18,6 +18,10 @@ program
  */
 program
   .command("list")
+  .option("-n, --name", "In addition to id, only name is displayed")
+  .option("-g, --gitSource", "In addition to id, only gitSource is displayed")
+  .option("-p, --tips", "In addition to id, only tips is displayed")
+  .option("-t, --createTime", "In addition to id, only createTime is displayed")
   .description("show project list")
   .action(require("./common/show-list"));
 
@@ -69,8 +73,17 @@ program
   .description("update project")
   .command("update <key>")
   .option("-n, --name [name]", "Name of the project")
-  .option("-g, --git-source [git_source]", "Git source URL")
+  .option("-g, --gitSource [gitSource]", "Git source URL")
   .option("-p, --tips [tips]", "Additional tips")
-  .option("-t, --create-time [create_time]", "Create time")
+  .option("-t, --createTime [createTime]", "Create time")
   .action(require("./action/update-project"));
+
+/**
+ * 查看用户配置信息
+ */
+program
+  .description("show user config")
+  .command("user")
+  .option("-a, --accessToken [accessToken]", "GitHub access token")
+  .action(require("./action/user-config"));
 program.parse(process.argv);
