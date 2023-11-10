@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 const { exec } = require("child_process");
 const inquirer = require("inquirer");
-const templates = require("../templates/template");
+const templates = require("../templates/template.json");
 async function generateProject() {
   const inqu = await inquirer.prompt([
     {

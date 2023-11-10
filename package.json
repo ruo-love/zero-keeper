@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "快速可视化选择配置文件中的项目",
   "bin": {
-    "alo7-web-scaffold": "./bin/index.js"
+    "zero-cli": "./bin/index.js"
   },
   "scripts": {},
   "keywords": [],
