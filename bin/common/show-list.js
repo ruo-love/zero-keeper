@@ -2,7 +2,7 @@ const Table = require("cli-table");
 module.exports = function showList(
   args,
   options,
-  clos = ["id", "name", "gitSource", "createTime", "tips"]
+  clos = ["id", "name", "createTime"]
 ) {
   let _cols = [];
   if (args) _cols = clos.filter((item) => args[item]);

@@ -1,4 +1,4 @@
-## keeper 是一款本地项目管理工具
+## keeper 是一款本地项目管理工具 【请全局安装】
 
 <span style="color: yellow;">无论您身居何处, keeper 中的项目都唯您所把控！</span>
 
@@ -12,7 +12,7 @@
 6. github accessToken 配置
 7. 一键打开项目的github仓库
 
-### start
+### install
 
 全局安装 keeper,安装完成即可使用
 

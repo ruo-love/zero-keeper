@@ -5,7 +5,7 @@ const { program } = require("commander");
  */
 program.version("1.0.0").name(`
     欢迎使用 keeper\n
-    本地快速可视化记录git项目\n
+    无论您身居何处, keeper 中的项目都唯您所把控！\n
 `);
 
 program
