@@ -11,8 +11,11 @@
   "license": "ISC",
   "devDependencies": {},
   "dependencies": {
+    "@octokit/rest": "^20.0.2",
+    "cli-table": "^0.3.11",
     "commander": "^11.1.0",
     "handlebars": "^4.7.8",
-    "inquirer": "8.2.0"
+    "inquirer": "8.2.0",
+    "node-fetch": "2"
   }
 }

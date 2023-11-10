@@ -1,15 +1,15 @@
 #! /usr/bin/env node
 const { exec } = require("child_process");
 const inquirer = require("inquirer");
-const templates = require("../templates/template.json");
 async function generateProject() {
+  const templates = require("../config/template.json");
   const inqu = await inquirer.prompt([
     {
       type: "rawlist",
       name: "project",
       message: "Please select project:",
       choices: templates.map((template) => ({
-        name: template.description,
+        name: template.name,
         value: template.git_source,
       })),
     },
