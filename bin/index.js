@@ -68,4 +68,16 @@ program.command("delete <key>").action((key) => {
   );
   console.log("删除成功");
 });
+
+// 导出配置文件
+program.command("export <path>").action((exportpath) => {
+  const fs = require("fs");
+  const path = require("path");
+  const templates = require("../templates/template.json");
+  fs.writeFileSync(
+    path.resolve(__dirname, exportpath, "template.json"),
+    JSON.stringify(templates)
+  );
+  console.log("导出成功");
+});
 program.parse(process.argv);
