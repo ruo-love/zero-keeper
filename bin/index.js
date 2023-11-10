@@ -86,4 +86,12 @@ program
   .command("user")
   .option("-a, --accessToken [accessToken]", "GitHub access token")
   .action(require("./action/user-config"));
+
+/**
+ * 通过浏览器打开项目
+ */
+program
+  .description("open project by browser")
+  .command("open <key>")
+  .action(require("./action/open-project"));
 program.parse(process.argv);

@@ -1,13 +1,13 @@
 {
   "name": "zero-keeper",
-  "version": "1.0.1",
-  "description": "本地项目管家",
+  "version": "1.0.7",
+  "description": "本地项目可视化管家",
   "bin": {
     "keeper": "./bin/index.js"
   },
   "scripts": {},
   "keywords": [],
-  "author": "zrcode || zero",
+  "author": "@zrcode",
   "license": "ISC",
   "devDependencies": {},
   "dependencies": {
@@ -16,6 +16,7 @@
     "commander": "^11.1.0",
     "handlebars": "^4.7.8",
     "inquirer": "8.2.0",
-    "node-fetch": "2"
+    "node-fetch": "2",
+    "open": "8.4.2"
   }
 }

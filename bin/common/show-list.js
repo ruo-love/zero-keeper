@@ -4,11 +4,8 @@ module.exports = function showList(
   options,
   clos = ["id", "name", "gitSource", "createTime", "tips"]
 ) {
-  console.log(args);
-
   let _cols = [];
   if (args) _cols = clos.filter((item) => args[item]);
-  console.log(_cols);
   if (_cols.length == 0) {
     _cols = clos;
   } else {
