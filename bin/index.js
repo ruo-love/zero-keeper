@@ -18,10 +18,11 @@ program
  */
 program
   .command("list")
-  .option("-n, --name", "In addition to id, only name is displayed")
   .option("-g, --gitSource", "In addition to id, only gitSource is displayed")
   .option("-p, --tips", "In addition to id, only tips is displayed")
   .option("-t, --createTime", "In addition to id, only createTime is displayed")
+  .option("-s, --size", "In addition to id, only size is displayed")
+  .option("-a, --starts", "In addition to id, only starts is displayed")
   .description("show project list")
   .action(require("./common/show-list"));
 
@@ -94,4 +95,34 @@ program
   .description("open project by browser")
   .command("open <key>")
   .action(require("./action/open-project"));
+
+/**
+ * 通过浏览器打开项目
+ */
+program
+  .description("check version")
+  .option("-v, --version version [version]", "check version")
+  .action(require("./action/check-version"));
+
+/**
+ * 获取github 项目
+ */
+program
+  .description("get project from github")
+  .command("github")
+  .option("-g, --gitSource", "In addition to id, only gitSource is displayed")
+  .option("-p, --tips", "In addition to id, only tips is displayed")
+  .option("-t, --createTime", "In addition to id, only createTime is displayed")
+  .option("-s, --size", "In addition to id, only size is displayed")
+  .option("-a, --starts", "In addition to id, only starts is displayed")
+  .action(require("./action/github-list"));
+
+/**
+ * 将github 项目添加到项目列表
+ */
+// program
+//   .description("add project from github")
+//   .command("github-add <key>")
+//   .action(require("./action/github-add"));
+
 program.parse(process.argv);

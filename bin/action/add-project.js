@@ -2,7 +2,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const showList = require("../common/show-list");
 const path = require("path");
-module.exports = async function addProject(options, name, gitSource) {
+module.exports = async function addProject(options, name, gitSource, key) {
   const templates = require("../config/template.json");
   if (name && gitSource) {
     const options = {
@@ -54,7 +54,7 @@ module.exports = async function addProject(options, name, gitSource) {
   }
   delete answers.need_tips;
 
-  answers.id = Date.now();
+  answers.id = key || Date.now();
   answers.createTime = new Date().toLocaleString();
   templates.push(answers);
   fs.writeFileSync(

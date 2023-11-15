@@ -62,7 +62,7 @@ module.exports = async function newRepository() {
       ])
       .then((answers) => {
         if (answers.addProject) {
-          addProject(null, name, response.data.clone_url);
+          addProject(null, name, response.data.clone_url,key);
         }
       });
   } catch (error) {
