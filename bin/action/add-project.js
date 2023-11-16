@@ -12,7 +12,7 @@ module.exports = async function addProject(options, name, gitSource, key) {
       tips: "",
       createTime: new Date().toLocaleString(),
     };
-    templates.push(options);
+    templates.unshift(options);
     fs.writeFileSync(
       path.resolve(__dirname, "../config/template.json"),
       JSON.stringify(templates)

@@ -3,10 +3,9 @@ const path = require("path");
 const fs = require("fs");
 const showList = require("../common/show-list");
 module.exports = async function getAllRepos(args, options) {
-  console.log("getAllRepos", args);
   const userConfig = require("../config/user.json");
   try {
-    const response =await axios.get(
+    const response = await axios.get(
       `https://api.github.com/users/${userConfig.username}/repos`,
       {
         headers: {

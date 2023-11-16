@@ -120,9 +120,9 @@ program
 /**
  * 将github 项目添加到项目列表
  */
-// program
-//   .description("add project from github")
-//   .command("github-add <key>")
-//   .action(require("./action/github-add"));
+program
+  .description("add project from github")
+  .command("github-add <key>")
+  .action(require("./action/github-add"));
 
 program.parse(process.argv);
