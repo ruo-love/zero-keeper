@@ -10,7 +10,7 @@
 4. 通过简短的终端命令可对 keeper 中的项目增删改查
 5. 支持配置导入、导出
 6. github accessToken 配置
-7. 一键打开项目的github仓库
+7. 一键打开项目的 github 仓库
 
 ### install
 
@@ -39,7 +39,7 @@ keeper user
 #### 显示列表
 
 ```
-keeper list [-n | -g | -p | -t]
+keeper list [-n | -g | -p | -t | -s | -a]
 
 // 显示keeper管理的项目 参数为指定显示某几个字段；默认显示所有字段；
 
@@ -107,5 +107,42 @@ keeper import <path>
 keeper new
 
 //可指定项目名、描述、是否私有；创建完成可选择是否将该新项目导入keeper中管理
+
+```
+
+/\*\*
+
+- 获取 github 项目
+  \*/
+  program
+  .description("get project from github")
+  .command("github")
+  .option("-g, --gitSource", "In addition to id, only gitSource is displayed")
+  .option("-p, --tips", "In addition to id, only tips is displayed")
+  .option("-t, --createTime", "In addition to id, only createTime is displayed")
+  .option("-s, --size", "In addition to id, only size is displayed")
+  .option("-a, --starts", "In addition to id, only starts is displayed")
+  .action(require("./action/github-list"));
+
+/\*\*
+
+- 将 github 项目添加到项目列表
+  \*/
+  program
+  .description("add project from github")
+  .command("github-add <key>")
+  .action(require("./action/github-add"));
+
+#### new 一键 github 所有项目
+
+```
+keeper github [-n | -g | -p | -t | -s | -a]
+
+```
+
+#### 将 github 项目添加到 keeper 数据库中
+
+```
+keeper github-add <key>    // key 为github 项目id; 该id可以通过 keeper github 命令查看
 
 ```
