@@ -110,29 +110,6 @@ keeper new
 
 ```
 
-/\*\*
-
-- 获取 github 项目
-  \*/
-  program
-  .description("get project from github")
-  .command("github")
-  .option("-g, --gitSource", "In addition to id, only gitSource is displayed")
-  .option("-p, --tips", "In addition to id, only tips is displayed")
-  .option("-t, --createTime", "In addition to id, only createTime is displayed")
-  .option("-s, --size", "In addition to id, only size is displayed")
-  .option("-a, --starts", "In addition to id, only starts is displayed")
-  .action(require("./action/github-list"));
-
-/\*\*
-
-- 将 github 项目添加到项目列表
-  \*/
-  program
-  .description("add project from github")
-  .command("github-add <key>")
-  .action(require("./action/github-add"));
-
 #### new 一键 github 所有项目
 
 ```
@@ -144,5 +121,12 @@ keeper github [-n | -g | -p | -t | -s | -a]
 
 ```
 keeper github-add <key>    // key 为github 项目id; 该id可以通过 keeper github 命令查看
+
+```
+
+#### 本地启动一个 node 服务器，署静态资源
+
+```
+keeperserver <port> <staticPath>    // port本地服务端口； staticPath静态资源地址 绝对地址;
 
 ```

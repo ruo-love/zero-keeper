@@ -1,13 +1,13 @@
 #! /usr/bin/env node
 const { program } = require("commander");
-/**
- * 选择项目
- */
 program.version("1.0.0").name(`
     欢迎使用 keeper\n
     无论您身居何处, keeper 中的项目都唯您所把控！\n
 `);
 
+/**
+ * 选择项目
+ */
 program
   .command("init")
   .description("Select the project to the current folder")
@@ -124,5 +124,13 @@ program
   .description("add project from github")
   .command("github-add <key>")
   .action(require("./action/github-add"));
+
+/**
+ * 本地启动一个node服务器，署静态资源
+ */
+program
+  .description("start a static server")
+  .command("server <port> <staticPath>")
+  .action(require("../server/app.js"));
 
 program.parse(process.argv);
