@@ -1,7 +1,8 @@
 {
   "name": "zero-keeper",
-  "version": "1.1.5",
+  "version": "1.1.7",
   "description": "keeper 是一款本地项目管理工具",
+  "homepage": "https://github.com/ruo-love/zero-keeper",
   "bin": {
     "keeper": "./bin/index.js"
   },
