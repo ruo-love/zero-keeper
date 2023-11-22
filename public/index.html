@@ -5,10 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .d {
+            cursor: not-allowed;
+        }
+    </style>
 </head>
 
 <body>
     dddd server
+    <button onclick="getData()">get</button>
+    <div class="d" onclick="getData()">click</div>
 </body>
+<script>
+    function getData() {
+        fetch('/api')
+            .then(response => response.json())
+            .then(data => console.log(data));
+    }
+</script>
 
 </html>

@@ -97,7 +97,7 @@ program
   .action(require("./action/open-project"));
 
 /**
- * 通过浏览器打开项目
+ * 检测版本
  */
 program
   .description("check version")

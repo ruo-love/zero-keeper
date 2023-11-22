@@ -9,8 +9,13 @@
 3. 一键创建 github 仓库，同时加入本地 keeper 仓库
 4. 通过简短的终端命令可对 keeper 中的项目增删改查
 5. 支持配置导入、导出
-6. github accessToken 配置
+6. github accessToken 配置，查看配置
 7. 一键打开项目的 github 仓库
+8. 一键打开github 项目
+9. 版本检测
+10. 获取github 上所有项目
+11. 将github指定项目添加到keeper
+12. 启动一个静态服务
 
 ### install
 
